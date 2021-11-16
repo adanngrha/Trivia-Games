@@ -8,7 +8,23 @@
 
         <script>
 
-            // TODO: Add code to check answers to questions
+        // TODO: Add code to check answers to questions
+            
+
+        // Free Response
+        document.addEventListener('DOMContentLoaded', function() {
+           document.querySelector('#check').addEventListener('click', function() {
+                let input = document.querySelector('input');
+                if (input.value === 'Jakarta') {
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('#result2').innerHTML = "Correct";
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#result2').innerHTML = "Incorrect";
+                }
+            }); 
+        });
+            
 
         </script>
 
@@ -26,6 +42,15 @@
                 <hr>
 
                 <!-- TODO: Add multiple choice question here -->
+                <h3>When is Indonesia Independence Day?</h3>
+        
+                    <button >19 August 1945</button>
+                    <button >17 August 1945</button>
+                    <button >17 August 1946</button>
+                    <button >18 August 1946</button>
+                    <button >16 August 1945</button>
+                
+                <p id="result1"></p>        
 
             </div>
 
@@ -34,6 +59,12 @@
                 <hr>
 
                 <!-- TODO: Add free response question here -->
+                <h3>What is the capital city of Indonesia?</h3>
+                
+                    <input type="text"></input>
+                    <button id="check">Check Answer</button>
+
+                <p id="result2"></p>
 
             </div>
 
