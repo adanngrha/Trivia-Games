@@ -9,11 +9,23 @@
         <script>
 
         // TODO: Add code to check answers to questions
-            
-
-        // Free Response
+        // Multiple Choice
         document.addEventListener('DOMContentLoaded', function() {
-           document.querySelector('#check').addEventListener('click', function() {
+            let correct = document.querySelector('.correct');
+            correct.addEventListener('click', function() {
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#result1').innerHTML = "Correct";
+            });
+
+            let incorrects = document.querySelectorAll('.incorrect');
+            for (let i = 0; i < incorrects.length; i++) {
+                incorrects[i].addEventListener('click', function() {
+                incorrects[i].style.backgroundColor = 'red';
+                document.querySelector('#result1').innerHTML = "Incorrect";
+                })
+            };
+            // Free Response
+             document.querySelector('#check').addEventListener('click', function() {
                 let input = document.querySelector('input');
                 if (input.value === 'Jakarta') {
                     input.style.backgroundColor = 'green';
@@ -23,9 +35,9 @@
                     document.querySelector('#result2').innerHTML = "Incorrect";
                 }
             }); 
-        });
-            
+        });   
 
+       
         </script>
 
     </head>
@@ -44,11 +56,11 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>When is Indonesia Independence Day?</h3>
         
-                    <button >19 August 1945</button>
-                    <button >17 August 1945</button>
-                    <button >17 August 1946</button>
-                    <button >18 August 1946</button>
-                    <button >16 August 1945</button>
+                    <button class="incorrect">19 August 1945</button>
+                    <button class="correct">17 August 1945</button>
+                    <button class="incorrect">17 August 1946</button>
+                    <button class="incorrect">18 August 1946</button>
+                    <button class="incorrect">16 August 1945</button>
                 
                 <p id="result1"></p>        
 
